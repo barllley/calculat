@@ -1,0 +1,110 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls"
+             x:Class="calculat.MainPage"
+             Title="Калькулятор ляляля"
+             BackgroundColor="#C0E0E9">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="28" />
+                <Setter Property="WidthRequest" Value="65" />
+                <Setter Property="HeightRequest" Value="58" />
+                <Setter Property="TextColor" Value="#402B14" />
+                <Setter Property="BackgroundColor" Value="#C0E0E9" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BorderColor" Value="#402B14" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="FontFamily" Value="lala" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Border Stroke="#402B14"
+            StrokeThickness="1.5"
+            BackgroundColor="#E693B6"
+            WidthRequest="310"
+            HeightRequest="465">
+        <Border.StrokeShape>
+            <shapes:RoundRectangle CornerRadius="10" />
+        </Border.StrokeShape>
+        <Border.Content>
+            <VerticalStackLayout Padding="15" Spacing="15">
+                <Frame Padding="10"
+                       BackgroundColor="#CFDEDF"
+                       BorderColor="#402B14"
+                       HasShadow="True"
+                       WidthRequest="275"
+                       HeightRequest="110">
+                    <VerticalStackLayout Spacing="5">
+                        <Label x:Name="fullExpLabel"
+                               Text="{Binding fullExp}"
+                               FontSize="18"
+                               HorizontalTextAlignment="End"
+                               TextColor="#402B14"
+                               VerticalTextAlignment="End"
+                               FontFamily="lala" />
+                        <Label x:Name="displayLabel"
+                               FontSize="32"
+                               HorizontalTextAlignment="End"
+                               HeightRequest="50"
+                               TextColor="#402B14"
+                               VerticalTextAlignment="Center"
+                               Text="{Binding displayText}"
+                               FontFamily="lala" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <VerticalStackLayout Spacing="5">
+                    <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
+                        <Button Text="7" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                        <Button Text="8" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                        <Button Text="9" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                        <Button Text="/" Style="{StaticResource ButtonStyle}" Clicked="OpBtnClick" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
+                        <Button Text="4" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                        <Button Text="5" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                        <Button Text="6" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                        <Button Text="x" Style="{StaticResource ButtonStyle}" Clicked="OpBtnClick" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
+                        <Button Text="1" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                        <Button Text="2" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                        <Button Text="3" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                        <Button Text="-" Style="{StaticResource ButtonStyle}" Clicked="OpBtnClick" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
+                        <VerticalStackLayout Spacing="5">
+                            <HorizontalStackLayout Spacing="5" HorizontalOptions="Start">
+                                <Button Text="0" Style="{StaticResource ButtonStyle}" Clicked="NumBtnClick" />
+                                <Button Text="C" Style="{StaticResource ButtonStyle}" Clicked="ClrBtnClick" />
+                                <Button Text="+" Style="{StaticResource ButtonStyle}" Clicked="OpBtnClick" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
+                                <Button Text="+/-" Style="{StaticResource ButtonStyle}" Clicked="SignBtnClick" />
+                                <Button Text="." Style="{StaticResource ButtonStyle}" Clicked="DotBtnClick" />
+                                <Button Text="," Style="{StaticResource ButtonStyle}" Clicked="Zap" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                        <Button Text="=" 
+                                FontSize="28" 
+                                WidthRequest="65" 
+                                HeightRequest="121" 
+                                TextColor="#402B14" 
+                                BackgroundColor="#C0E0E9"
+                                CornerRadius="10" 
+                                BorderColor="#402B14" 
+                                BorderWidth="1" 
+                                FontFamily="lala"
+                                Clicked="EqBtnClick" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Border.Content>
+    </Border>
+</ContentPage>
